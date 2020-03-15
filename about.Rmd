@@ -1,0 +1,10 @@
+---
+title: "About this site"
+description: |
+  This site is a place where we can show examples of Living Norway's workflow
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
