@@ -17,3 +17,95 @@ knitr::opts_chunk$set(echo = FALSE)
 #
 ```
 
+
+## Building the foundation for FAIR data management with Living Norway
+
+Good data management underpins the FAIR (Findable, Accessible, Interoperable, Resuable) principles for scientific data management and stewardship. A starting point for good data management is a logical folder structure in which to store all files associated with the data collected. The structure outlined below can be used for all projects that collect contemporary biodiversity data or "rescue" legacy data. 
+
+### Minimum metadata
+
+Metadata (a set of variables that describes the raw or transformed dataset) are required so that future users (including your future self) get an understanding of, for example, where the data was collected, who collected it and what units the variables were measured in. Basic mimimum metadata should be added as soon as possible (before you forget it). 
+
+### Data
+
+#### Raw Data
+
+There is always some level of processing involved in getting data collected in the field or laboratory in to a digital raw format. This folder should contain the most basic digital representation of any dataset. The level of standarisation will likely vary wildely among projects, for example, the original data might be stored in a proprietary file format from some kind of instrument that are only readable with software available for Windows 3.1 - these should be stored in raw data folder, whilst tabular output of this in .csv format are stored in the mapped data folder.
+
+#### Mapped Data
+
+The mapped data folder is where manipulated copies of the raw data are stored. Data cleaning (removing errors in the raw data stemming from data-entry for example), transformation of variables, etc. should all be included in this folder (remember that the raw data no matter how messy is sacrosanct).
+
+#### Scanned Data
+
+A copy of the raw field data (field or lab notes, data recording sheets, etc.) should be scanned and uploaded in to scanned data folder. 
+
+### Scripts
+
+Any code (e.g. python or R) used to manipulate the raw data, download publically available covariates, etc. should be saved in this folder. All scripts should be reproducilble by others not using your specifc computer (so not calling on locally stored files or functions). 
+
+### Meta.xml
+
+This folder contains metadata in a machine readable form using the EML metadata language.
+
+### Data management plan
+In this folder you store the data management plan that you created before starting the project. This gives a detailed description of how and where data will be managed and stored.
+
+
+## Using Living Norway to automate this folder structure
+
+Using the function below you can set up the folder structure outline above on to your computer. This function also creates an empty markdown file for you to fill in your minimum metadata. 
+
+
+```{r Function to Build a folder structure, echo=TRUE}
+# Build_folder_structure
+
+# This function builds the data folder structure in the working directory
+
+
+build_folder_structure<-function(project_name=project_name){
+
+  if(dir.exists(project_name)==TRUE) {
+
+    print("Directory already exists please check the name and retry")
+
+  } else{
+
+    dir.create(paste0(getwd(),"/", project_name))
+
+    dir.create(paste0(getwd(),"/", project_name,"/", "minimum_metadata"))
+
+    dir.create(paste0(getwd(),"/",project_name,"/", "data"))
+
+    dir.create(paste0(getwd(),"/", project_name,"/","data", "/", "raw_data"))
+
+    dir.create(paste0(getwd(),"/", project_name,"/","data", "/", "mapped_data"))
+
+    dir.create(paste0(getwd(),"/", project_name,"/","data", "/", "scan_data"))
+
+    dir.create(paste0(getwd(),"/", project_name,"/","scripts"))
+
+    dir.create(paste0(getwd(),"/", project_name,"/","meta_xml"))
+
+    dir.create(paste0(getwd(),"/", project_name,"/","dmp"))
+
+    rmarkdown::draft(paste0(getwd(),"/", project_name,"/", "minimum_metadata", "/","minimum_metadata.Rmd"),
+
+                     template="minimum_metadata", package="TheDataPackage", edit=FALSE)
+
+      }
+
+
+
+}
+
+```
+
+
+To run this function just type build_folder_structure(project_name="project_name") replacing the "project_name" with the name you have given your own project. 
+
+# Useful resources
+
+https://www.britishecologicalsociety.org/wp-content/uploads/Publ_Data-Management-Booklet.pdf
+https://data.research.cornell.edu/content/readme#fileoverview
+https://site.uit.no/dataverseno/deposit/prepare/
