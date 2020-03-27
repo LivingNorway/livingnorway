@@ -19,29 +19,29 @@
  <!--/radix_placeholder_import_source-->
 
   <!--radix_placeholder_meta_tags-->
-  <title>Living Norway</title>
+  <title>Living Norway: Posts</title>
   
-  <meta property="description" itemprop="description" content="Site for demonstrating Living Norway functions and examples. For a full description of the project please visit https://livingnorway.no/."/>
+  <meta property="description" itemprop="description" content="This site is a place where we can demonstrate Living Norway&#39;s workflow"/>
   
   
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Living Norway"/>
+  <meta property="og:title" content="Living Norway: Posts"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Site for demonstrating Living Norway functions and examples. For a full description of the project please visit https://livingnorway.no/."/>
+  <meta property="og:description" content="This site is a place where we can demonstrate Living Norway&#39;s workflow"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Living Norway"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Living Norway"/>
-  <meta property="twitter:description" content="Site for demonstrating Living Norway functions and examples. For a full description of the project please visit https://livingnorway.no/."/>
+  <meta property="twitter:title" content="Living Norway: Posts"/>
+  <meta property="twitter:description" content="This site is a place where we can demonstrate Living Norway&#39;s workflow"/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["Living Norway"]},{"type":"character","attributes":{},"value":["Site for demonstrating Living Norway functions and examples. For a full description of the project please visit https://livingnorway.no/.\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["Posts"]},{"type":"character","attributes":{},"value":["This site is a place where we can demonstrate Living Norway's workflow"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -1272,7 +1272,7 @@
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Living Norway","description":"Site for demonstrating Living Norway functions and examples. For a full description of the project please visit https://livingnorway.no/.","authors":[]}
+{"title":"Posts","description":"This site is a place where we can demonstrate Living Norway's workflow","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1295,14 +1295,77 @@
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Living Norway</h1>
-<p><p>Site for demonstrating Living Norway functions and examples. For a full description of the project please visit <a href="https://livingnorway.no/" class="uri">https://livingnorway.no/</a>.</p></p>
+<h1>Posts</h1>
+<p><p>This site is a place where we can demonstrate Living Norway’s workflow</p></p>
 </div>
 
 
 <div class="d-article">
-<h1 id="about">About</h1>
-<p>Living Norway Ecological Data Network is the focal point for ecological data in Norway. When fully operational, the ambition is to cover both e-infrastructure, data mobilization network, and human know-how and training needed to gain all the benefits associated with this effort.</p>
+<h2 id="building-the-foundation-for-fair-data-management-with-living-norway">Building the foundation for FAIR data management with Living Norway</h2>
+<p>Good data management underpins the FAIR (Findable, Accessible, Interoperable, Resuable) principles for scientific data management and stewardship. A starting point for good data management is a logical folder structure in which to store all files associated with the data collected. The structure outlined below can be used for all projects that collect contemporary biodiversity data or “rescue” legacy data.</p>
+<h3 id="minimum-metadata">Minimum metadata</h3>
+<p>Metadata (a set of variables that describes the raw or transformed dataset) are required so that future users (including your future self) get an understanding of, for example, where the data was collected, who collected it and what units the variables were measured in. Basic mimimum metadata should be added as soon as possible (before you forget it).</p>
+<h3 id="data">Data</h3>
+<h4 id="raw-data">Raw Data</h4>
+<p>There is always some level of processing involved in getting data collected in the field or laboratory in to a digital raw format. This folder should contain the most basic digital representation of any dataset. The level of standarisation will likely vary wildely among projects, for example, the original data might be stored in a proprietary file format from some kind of instrument that are only readable with software available for Windows 3.1 - these should be stored in raw data folder, whilst tabular output of this in .csv format are stored in the mapped data folder.</p>
+<h4 id="mapped-data">Mapped Data</h4>
+<p>The mapped data folder is where manipulated copies of the raw data are stored. Data cleaning (removing errors in the raw data stemming from data-entry for example), transformation of variables, etc. should all be included in this folder (remember that the raw data no matter how messy is sacrosanct).</p>
+<h4 id="scanned-data">Scanned Data</h4>
+<p>A copy of the raw field data (field or lab notes, data recording sheets, etc.) should be scanned and uploaded in to scanned data folder.</p>
+<h3 id="scripts">Scripts</h3>
+<p>Any code (e.g. python or R) used to manipulate the raw data, download publically available covariates, etc. should be saved in this folder. All scripts should be reproducilble by others not using your specifc computer (so not calling on locally stored files or functions).</p>
+<h3 id="meta.xml">Meta.xml</h3>
+<p>This folder contains metadata in a machine readable form using the EML metadata language.</p>
+<h3 id="data-management-plan">Data management plan</h3>
+<p>In this folder you store the data management plan that you created before starting the project. This gives a detailed description of how and where data will be managed and stored.</p>
+<h2 id="using-living-norway-to-automate-this-folder-structure">Using Living Norway to automate this folder structure</h2>
+<p>Using the function below you can set up the folder structure outline above on to your computer. This function also creates an empty markdown file for you to fill in your minimum metadata.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+# Build_folder_structure
+
+# This function builds the data folder structure in the working directory
+
+
+build_folder_structure&lt;-function(project_name=project_name){
+
+  if(dir.exists(project_name)==TRUE) {
+
+    print(&quot;Directory already exists please check the name and retry&quot;)
+
+  } else{
+
+    dir.create(paste0(getwd(),&quot;/&quot;, project_name))
+
+    dir.create(paste0(getwd(),&quot;/&quot;, project_name,&quot;/&quot;, &quot;minimum_metadata&quot;))
+
+    dir.create(paste0(getwd(),&quot;/&quot;,project_name,&quot;/&quot;, &quot;data&quot;))
+
+    dir.create(paste0(getwd(),&quot;/&quot;, project_name,&quot;/&quot;,&quot;data&quot;, &quot;/&quot;, &quot;raw_data&quot;))
+
+    dir.create(paste0(getwd(),&quot;/&quot;, project_name,&quot;/&quot;,&quot;data&quot;, &quot;/&quot;, &quot;mapped_data&quot;))
+
+    dir.create(paste0(getwd(),&quot;/&quot;, project_name,&quot;/&quot;,&quot;data&quot;, &quot;/&quot;, &quot;scan_data&quot;))
+
+    dir.create(paste0(getwd(),&quot;/&quot;, project_name,&quot;/&quot;,&quot;scripts&quot;))
+
+    dir.create(paste0(getwd(),&quot;/&quot;, project_name,&quot;/&quot;,&quot;meta_xml&quot;))
+
+    dir.create(paste0(getwd(),&quot;/&quot;, project_name,&quot;/&quot;,&quot;dmp&quot;))
+
+    rmarkdown::draft(paste0(getwd(),&quot;/&quot;, project_name,&quot;/&quot;, &quot;minimum_metadata&quot;, &quot;/&quot;,&quot;minimum_metadata.Rmd&quot;),
+
+                     template=&quot;minimum_metadata&quot;, package=&quot;TheDataPackage&quot;, edit=FALSE)
+
+      }
+
+
+
+}</code></pre>
+</div>
+<p>To run this function just type build_folder_structure(project_name=“project_name”) replacing the “project_name” with the name you have given your own project.</p>
+<h1 id="useful-resources">Useful resources</h1>
+<p><a href="https://www.britishecologicalsociety.org/wp-content/uploads/Publ_Data-Management-Booklet.pdf" class="uri">https://www.britishecologicalsociety.org/wp-content/uploads/Publ_Data-Management-Booklet.pdf</a> <a href="https://data.research.cornell.edu/content/readme#fileoverview" class="uri">https://data.research.cornell.edu/content/readme#fileoverview</a> <a href="https://site.uit.no/dataverseno/deposit/prepare/" class="uri">https://site.uit.no/dataverseno/deposit/prepare/</a></p>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
