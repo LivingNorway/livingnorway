@@ -1,5 +1,5 @@
 ---
-title: "About this site"
+title: "About Living Norway"
 description: |
   This site is a place where we can show examples of Living Norway's workflow
 ---
@@ -8,3 +8,20 @@ description: |
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+
+
+```{r fig.align='center', out.width='50%'}
+
+knitr::include_graphics("logo/LNWhite.png")
+
+```
+
+Living Norway Ecological Data Network is the focal point for ecological data in Norway. When fully operational, the ambition is to cover both e-infrastructure, data mobilization network, and human know-how and training needed to gain all the benefits associated with this effort.
+
+## twitter
+
+Follow on [twitter](https://twitter.com/living_norway) to hear the latest news
+
+## Blog
+
+Read our blog at https://livingnorway.no/

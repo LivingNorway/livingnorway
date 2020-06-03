@@ -3,21 +3,6 @@ title: "Living Norway"
 description: |
   Site for demonstrating Living Norway functions and examples. For a full description of the project please visit https://livingnorway.no/.
 site: distill::distill_website
+listing: posts
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
-
-# Learn more about publishing to GitHub Pages at:
-# https://rstudio.github.io/distill/publish_website.html#github-pages
-
-#
-```
-
-
-# About
-
-Living Norway Ecological Data Network is the focal point for ecological data in Norway. When fully operational, the ambition is to cover both e-infrastructure, data mobilization network, and human know-how and training needed to gain all the benefits associated with this effort.
