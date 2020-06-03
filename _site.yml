@@ -10,7 +10,4 @@ navbar:
       menu:
     - text: "about"
       href: about.html
-      
-
-theme: minima
 output: distill::distill_article
