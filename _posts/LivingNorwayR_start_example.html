@@ -987,8 +987,6 @@ library(LivingNorwayR)</code></pre>
 <pre class="r"><code>
 project_name=&quot;My_First_LivingNorway_prj&quot;
 build_folder_structure(project_name = project_name)</code></pre>
-<pre><code>
-[1] &quot;Directory already exists please check the name and retry&quot;</code></pre>
 </div>
 <p>Once you run the build_folder_structure() function you end up with a folder containing several sub-folders in your project. Let’s explore these folders.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1001,8 +999,8 @@ LivingNorway_project &lt;- rbind.fill(x)
 library(collapsibleTree) 
 p &lt;- collapsibleTree( LivingNorway_project, c(&quot;V8&quot;, &quot;V9&quot;))
 p</code></pre>
-<div id="htmlwidget-512bb33dede03cb65f77" style="width:624px;height:384px;" class="collapsibleTree html-widget"></div>
-<script type="application/json" data-for="htmlwidget-512bb33dede03cb65f77">{"x":{"data":{"name":"LivingNorway_project","children":[{"name":"My_First_LivingNorway_prj","children":[{"name":"data"},{"name":"dmp"},{"name":"meta_xml"},{"name":"minimum_metadata"},{"name":"scripts"}]}]},"options":{"hierarchy":["V8","V9"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":true,"zoomable":true,"margin":{"top":20,"bottom":20,"left":125,"right":105},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-cd82c9bdbd13fe2dc02a" style="width:624px;height:384px;" class="collapsibleTree html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cd82c9bdbd13fe2dc02a">{"x":{"data":{"name":"LivingNorway_project","children":[{"name":"My_First_LivingNorway_prj","children":[{"name":"data"},{"name":"dmp"},{"name":"meta_xml"},{"name":"minimum_metadata"},{"name":"scripts"}]}]},"options":{"hierarchy":["V8","V9"],"input":null,"attribute":"leafCount","linkLength":null,"fontSize":10,"tooltip":false,"collapsed":true,"zoomable":true,"margin":{"top":20,"bottom":20,"left":125,"right":105},"fill":"lightsteelblue"}},"evals":[],"jsHooks":[]}</script>
 </div>
 <p>From the tree diagram you can explore the folder structure (click on the blue nodes to expand them). At the moment we have 5 folders in the top-most heirachy: data, dmp,meta_xml,minimum_metadata and scripts.</p>
 <h3 id="data">data</h3>
