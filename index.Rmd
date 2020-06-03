@@ -1,8 +1,8 @@
 ---
 title: "Living Norway"
+listing: posts
+site: distill::distill_website
 description: |
   Site for demonstrating Living Norway functions and examples. For a full description of the project please visit https://livingnorway.no/.
-site: distill::distill_website
-listing: posts
 ---
 
