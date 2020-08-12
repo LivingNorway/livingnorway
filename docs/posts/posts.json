@@ -1,5 +1,21 @@
 [
   {
+    "path": "posts/Butterflies/",
+    "title": "Exporting complex ecological data into GBIF",
+    "description": "To GBIF and back again, using the Event core standard.",
+    "author": [
+      {
+        "name": "Jens Åström",
+        "url": "https://github.com/jenast"
+      }
+    ],
+    "date": "2020-08-11",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2020-08-12T10:33:27+02:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/",
     "title": "How to initiate and organise a data project in ecology?",
     "description": {},
@@ -12,6 +28,7 @@
     "date": "2020-06-03",
     "categories": [],
     "preview": {},
-    "last_modified": "2020-06-03T17:17:16+02:00"
+    "last_modified": "2020-06-03T17:17:16+02:00",
+    "input_file": {}
   }
 ]
