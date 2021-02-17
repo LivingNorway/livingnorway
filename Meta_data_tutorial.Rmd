@@ -3,7 +3,7 @@ title: "Adding metadata in Rmarkdown"
 author: "Matt"
 output: 
   distill::distill_article:
-    self_contained: TRUE
+    self_contained: FALSE
 ---
 
 ## Setting up the metadata in RMarkdown
