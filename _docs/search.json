@@ -1,0 +1,21 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About Living Norway",
+      "description": "This site is a place where we can show examples of Living Norway's workflow",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\nLiving Norway Ecological Data Network is the focal point for ecological data in Norway. When fully operational, the ambition is to cover both e-infrastructure, data mobilization network, and human know-how and training needed to gain all the benefits associated with this effort.\r\ntwitter\r\nFollow on twitter to hear the latest news\r\nBlog\r\nRead our blog at https://livingnorway.no/\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-04-15T17:33:45+02:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Living Norway",
+      "description": "Site for demonstrating Living Norway functions and examples. For a full description of the project please visit https://livingnorway.no/.",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-04-15T17:33:46+02:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}
