@@ -10,6 +10,4 @@ navbar:
       menu:
     - text: "about"
       href: about.html
-    - text: "encrypted"
-      href: test.encrypted.html
 output: distill::distill_article
