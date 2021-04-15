@@ -2,7 +2,7 @@ name: "LivingNorway.github.io"
 title: "Living Norway"
 description: |
   Living Norway
-output_dir: "docs"
+output_dir: "_docs"
 navbar:
   right:
     - text: "posts"
